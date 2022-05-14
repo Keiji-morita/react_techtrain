@@ -1,29 +1,44 @@
 import logo from './logo.svg';
 import './App.css';
+// import { BrowserRouter, div, Route, useNavigate } from "react-router-dom";
+import { BrowserRouter, Route, Link, Routes } from 'react-router-dom';
+import Register from './components/register'
+import Login from './components/login'
 
-function App() {
+const App = () => {
+    // const navigate = useNavigate()
   return (
     <div className="App">
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
 
-      <div>
-        <button>サインイン　ユーザー登録</button>
-        <button>ログイン</button>
-      </div>
+
+      <BrowserRouter>
+    <div>
+      <Link to="/components/register">
+        <button>
+          サインイン
+        </button>
+      </Link>
     </div>
+
+    <div>
+      <Link to="/components/login">
+        <button>
+          ログイン
+        </button>
+      </Link>
+    </div>
+
+      
+            <Routes>
+                <Route path="/components/register" element={<Register />}/>
+                <Route path="/components/login" element={<Login />}/>
+            </Routes>
+        </BrowserRouter>
+    
+
+
+    </div>
+    
   );
 }
 
