@@ -11,7 +11,10 @@ export default function Register() {
     
   const registUser = {
     methods: 'POST',
-  }
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({ title: 'User Information' })
+  };
+  fetch('api-for-missions-and-railways.herokuapp.com')
   
   return (
     <main>
@@ -33,6 +36,7 @@ export default function Register() {
         <input />
       </form>
       
+      <button>submit</button>
     </div>
     </ main>
   )
